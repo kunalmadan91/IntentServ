@@ -4,6 +4,7 @@ import android.app.IntentService;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.content.LocalBroadcastManager;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -48,15 +49,16 @@ public class DownloadService extends IntentService {
             try {
                 //String[] results = downloadData(url);
 
-                Intent intent1 = new Intent("com.tutorialspoint.CUSTOM_INTENT");
+                Intent intent1 = new Intent();
 
-
+            intent1.setAction("com.example.android.threadsample.BROADCAST");
 
                 intent1.putExtra("key","value");
                 //intent.putExtra("key", "string")rrah
                 Log.v("i am over here", "i am over here");
                 Log.v("burrah","burrah");
-                startActivity(intent);
+                //startActivity(intent);
+                LocalBroadcastManager.getInstance(this).sendBroadcast(intent1);
                 /* Sending result back to activity */
 
 

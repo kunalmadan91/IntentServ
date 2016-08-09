@@ -20,6 +20,13 @@
             android:name=".DownloadService"
             android:exported="false" />
 
+        <receiver android:name=".MainActivity$MyReceiver">
+            <intent-filter>
+                <action android:name="com.example.android.threadsample.BROADCAST">
+                </action>
+            </intent-filter>
+
+        </receiver>
 
     </application>
 

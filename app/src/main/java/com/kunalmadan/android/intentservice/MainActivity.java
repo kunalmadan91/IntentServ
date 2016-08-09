@@ -3,9 +3,7 @@ package com.kunalmadan.android.intentservice;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
@@ -23,21 +21,29 @@ public class MainActivity extends AppCompatActivity {
 
         startService(intent);
     }
-    private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
+
+    public class MyReceiver extends BroadcastReceiver{
+       
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            Toast.makeText(context, "heyyyyyyyyyyyyy", Toast.LENGTH_SHORT).show();
+        }
+    }
+    /*private BroadcastReceiver mBroadcastReceiver = new BroadcastReceiver() {
         @Override
 
         public void onReceive(Context context, Intent intent) {
             Toast.makeText(MainActivity.this, "heyyyyyyyyyyyyy", Toast.LENGTH_SHORT).show();
            // String myString = intent.getStringExtra("key");
         }
-    };
+    };*/
 
-    @Override
+  /*  @Override
     public void onResume() {
         super.onResume();
         LocalBroadcastManager.getInstance(this)
                 .registerReceiver(mBroadcastReceiver,
-                        new IntentFilter("com.tutorialspoint.CUSTOM_INTENT"));
+                        new IntentFilter("qwqww"));
 
     }
 
@@ -49,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
                 .unregisterReceiver(mBroadcastReceiver);
     }
 
-
+*/
 
 
 }
